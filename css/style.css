@@ -9,7 +9,7 @@
 
 /* Flexbox
    ========================================================================== */
-   
+
 .container-fluid,
 .container {
   margin-right: auto;
@@ -22,19 +22,23 @@
 }
 
 .row {
-  box-sizing: border-box; 
+/*  box-sizing: border-box; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
+  -webkit-box-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: auto;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   margin-bottom: 1rem;
@@ -93,11 +97,10 @@
 .col-xs {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
-  flex-grow: 0;
+  flex-grow: 1;
   flex-shrink: 1;
   -ms-flex-preferred-size: 0;
   flex-basis: auto;
-  max-width: 100%;
 }
 
 .col-xs-1 {
@@ -1212,6 +1215,9 @@ audio:not([controls]) {
 img {
   border-style: none;
   max-width: 95%;
+  max-height: 95%;
+  width: 95%;
+  height: auto;
 }
 
 /**
